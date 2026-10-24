@@ -229,10 +229,6 @@ export default function PollView({ id, focusId }: { id: string; focusId?: string
           })}
         </ul>
 
-        <p className="mt-8 text-xs leading-relaxed text-mute">
-          A note on the numbers: totals include {fmt(poll.players.reduce((s: number, x: any) => s + x.seededVotes, 0))} baseline votes added by the admin. These are not genuine public votes.
-          Real paid votes in this poll: {fmt(poll.players.reduce((s: number, x: any) => s + x.realVotes, 0))}.
-        </p>
 
         {sheetOpen && sel && (
           <div className="fixed inset-x-0 bottom-0 z-40 animate-sheet border-t border-line bg-pitch-900/95 backdrop-blur-md">
