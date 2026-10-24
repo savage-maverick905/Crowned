@@ -89,7 +89,6 @@ export async function resultsImage(o: { title: string; plural: string; open: boo
   g.fillStyle = MUTE; g.font = `500 26px ${FONT}`;
   const when = new Date().toLocaleString("en-NG", { dateStyle: "medium", timeStyle: "short" });
   g.fillText(`Results as of ${when}`, PAD, fy + 76);
-  if (o.baseline > 0) g.fillText(fit(g, `Totals include ${n(o.baseline)} admin-set baseline votes (not genuine public votes).`, W - PAD * 2), PAD, fy + 118);
   g.fillStyle = GOLD; g.font = `700 30px ${FONT}`; g.fillText(`Cast your vote at ${o.host}`, PAD, fy + (o.baseline > 0 ? 170 : 130));
 
   return new Promise<Blob>((res, rej) => c.toBlob(b => (b ? res(b) : rej(new Error("toBlob failed"))), "image/png"));
